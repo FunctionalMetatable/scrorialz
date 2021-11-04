@@ -10,3 +10,8 @@ interface User {
 	username: string;
 	scratchId: number;
 }
+
+interface Session {
+	user: User,
+	token: string
+}

@@ -39,14 +39,19 @@ export const handle: Handle = async ({ request, resolve }) => {
 	return response;
 };
 
-/* eslint-disable */
-export function getSession(request: ServerRequest) {
-	return request.locals.user
-		? {
-				user: JSON.parse(JSON.stringify(request.locals.user)),
-				token: String(request.locals.token)
-		  }
-		: {};
+
+export function getSession(request: ServerRequest): Session {
+
+	if (request.locals.user) {
+		const __static_session__ = JSON.parse(JSON.stringify(request.locals.user))
+		return {
+			user: __static_session__ ,
+			token: String(request.locals.token)
+		}
+	}
+	
+
+	return { user: null, token: null }
 }
 
 /* eslint-enable */
