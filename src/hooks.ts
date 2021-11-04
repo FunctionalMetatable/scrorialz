@@ -53,5 +53,3 @@ export function getSession(request: ServerRequest): Session {
 
 	return { user: null, token: null }
 }
-
-/* eslint-enable */
