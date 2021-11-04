@@ -1,12 +1,12 @@
 /// <reference types="@sveltejs/kit" />
 
 interface Tutorial {
-    id: string,
-    author: User
+	id: string;
+	author: User;
 }
 
 interface User {
-    id: string,
-    username: string,
-    scratchId: number
+	id: string;
+	username: string;
+	scratchId: number;
 }
