@@ -2,10 +2,10 @@
 
 interface Tutorial {
     id: string,
-    author: Author
+    author: User
 }
 
-interface Author {
+interface User {
     id: string,
     username: string,
     scratchId: number

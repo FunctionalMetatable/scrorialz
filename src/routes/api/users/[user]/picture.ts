@@ -9,7 +9,7 @@ export const get: RequestHandler = async (req) => {
    return {
        status: 301,
        headers: {
-           Location: `https://cdn2.scratch.mit.edu/get_image/user/${json.id}_500x500.png?`
+           Location: req.params.uploads ? `https://cdn2.scratch.mit.edu/get_image/user/${json.id}_500x500.png?` : `https://uploads.scratch.mit.edu/users/avatars/${json.id}.png`
        }
    }
 }

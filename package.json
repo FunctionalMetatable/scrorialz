@@ -1,5 +1,5 @@
 {
-  "name": "scoot",
+  "name": "scrorialz",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -31,5 +31,6 @@
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
     "monk": "^7.3.4"
-  }
+  },
+  "license": "MIT"
 }

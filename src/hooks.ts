@@ -11,7 +11,7 @@ export const handle: Handle = async ({ request, resolve }) => {
 	
 	if (cookies.sessionId) {
 		const session = await sessions.findOne({
-			id: cookies.sessionId
+			id: new RegExp(`^${cookies.sessionId}$`)
 		})
 
 		if (session && session.id) {
@@ -41,12 +41,15 @@ export const handle: Handle = async ({ request, resolve }) => {
 	return response
 };
 
-export function getSession(request: ServerRequest): GetSession {
+/* eslint-disable */
+export function getSession(request: ServerRequest) {
 	return request.locals.user ?
 		{
-			user: request.locals.user,
-			token: request.locals.token
+			user: JSON.parse(JSON.stringify(request.locals.user)),
+			token: String(request.locals.token)
 		}
 	:
 		{}
 }
+
+/* eslint-enable */
